@@ -3,6 +3,7 @@ package com.example.demo.emp;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,4 +30,5 @@ public class EmpVO {
 	 String departmentId;
 	 String managerId;
 	 String phone;
+	 String photo;
 }

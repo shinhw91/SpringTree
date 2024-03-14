@@ -37,7 +37,7 @@
 	<include refid="condition"></include>
 	ORDER BY title
  	
- 	) a where rownum <![CDATA[<=]]>#{svo.end} b where rn >= #{svo.start}
+ 	) a where rownum <![CDATA[<=]]>#{svo.end}) b where rn >= #{svo.start}
  	</select>
  	
  	

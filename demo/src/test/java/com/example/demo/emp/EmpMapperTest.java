@@ -36,7 +36,7 @@ public class EmpMapperTest {
 		System.out.println(result);
 	}
 	
-//	@Test
+	@Test
 	public void 사원등록() {
 		// vo 객체 생성
 //		EmpVO vo = new EmpVO();
@@ -51,7 +51,7 @@ public class EmpMapperTest {
 		EmpVO vo = EmpVO.builder()
 					// .employeeId(301)
 					.lastName("홍")
-					.email("email3@example.com")
+					.email("email5@example.com")
 					.hireDate(new Date(2021,0,1))
 					.jobId("IT_PROG")
 					.build();
@@ -64,7 +64,7 @@ public class EmpMapperTest {
 		System.out.println("등록건수 = " + result);
 	}
 	
-	@Test
+//	@Test
 	public void 사원전체조회() {
 		EmpVO vo = new EmpVO();
 		SearchVO svo = new SearchVO();

@@ -15,7 +15,7 @@ public class BoardMapperTest {
 	@Test
 	public void 게시판전체조회() {
 		BoardVO vo = new BoardVO();
-		SearchVO svo = new SearchVO();
+		BSearchVO svo = new BSearchVO();
 		
 		svo.setBoardNos(new int[] {1,2,3});
 		List<BoardVO> list = mapper.getBoardList(vo, svo);
