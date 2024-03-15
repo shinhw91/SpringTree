@@ -24,7 +24,7 @@ public class EmpVO {
 	 String email;
 	 @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
 	 Date hireDate;
-	 Integer salary;
+	 int salary;
 	 String jobId;
 	 String departmentId;
 	 String managerId;

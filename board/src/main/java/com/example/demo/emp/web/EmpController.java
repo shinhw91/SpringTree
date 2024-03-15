@@ -60,6 +60,12 @@ public class EmpController {
 	// 수정처리
 	
 	// 삭제처리
+    @GetMapping("/delete")
+    public String delete(int employeeId) {
+    	mapper.deleteEmp(employeeId);
+    	System.out.println(employeeId);
+		return "redirect:emp/list";
+    }
 	
 	// 상세조회 페이지이동
 	@GetMapping("/emp/info/{employeeId}")

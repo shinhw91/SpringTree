@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>사원목록</h2>
+	<h2>사원상세</h2>
 	<table>
 		 <tr>
 		   <th>employee_id</th>
@@ -17,6 +17,7 @@
 		   <td th:text="${emp.firstName}"></td>
 		   <td th:text="${emp.lastName}"></td>
 		   <td th:text="${emp.hireDate}"></td>
+		   <td><button th:href="@{/emp/delete/(employeeId=${emp.employeeId})}">삭제</button></td>
 		 </tr>
 	</table>
 </body>
