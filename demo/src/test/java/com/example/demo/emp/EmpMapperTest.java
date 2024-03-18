@@ -51,9 +51,10 @@ public class EmpMapperTest {
 		EmpVO vo = EmpVO.builder()
 					// .employeeId(301)
 					.lastName("홍")
-					.email("email5@example.com")
+					.email("email6@example.com")
 					.hireDate(new Date(2021,0,1))
 					.jobId("IT_PROG")
+					.salary(5000)
 					.build();
 		
 		// 값을 담고

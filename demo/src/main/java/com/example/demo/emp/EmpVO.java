@@ -4,6 +4,10 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,11 +26,13 @@ public class EmpVO {
 	 String firstName;
 	 String lastName;
 	 String email;
-	 @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+	 @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")	// 입력 String -> Date
+	 @JsonFormat(pattern = "yyyy-MM-dd HH:mm")	// 출력 Date -> String
 	 Date hireDate;
-	 int salary;
+	 Integer salary;
 	 String jobId;
-	 String departmentId;
-	 String managerId;
-	 String phone;
+	 @JsonProperty String departmentId;
+	 @JsonIgnore String managerId;
+	 @JsonIgnore String phone;
+	 @JsonIgnore String photo;
 }

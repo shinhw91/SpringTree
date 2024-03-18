@@ -5,6 +5,8 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,7 +25,8 @@ public class EmpVO {
 	 String firstName;
 	 String lastName;
 	 String email;
-	 @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+	 @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")	// 입력 String -> Date
+	 @JsonFormat(pattern = "yyyy-MM-dd HH:mm")	// 출력 Date -> String
 	 Date hireDate;
 	 Integer salary;
 	 String jobId;
