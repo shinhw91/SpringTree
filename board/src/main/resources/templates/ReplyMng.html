@@ -147,8 +147,8 @@ function listReq() {
 	let i = 0;
 		for(obj of res) {
 			let newTag = `<tr>
-		 		<td>${++i}</td>
-		 		<td onclick="infoReq(${obj.employeeId})">${obj.employeeId}</td>
+		 		<td>${obj.rno}</td>
+		 		<td onclick="infoReq(${obj.employeeId})">${obj.bno}</td>
 		 		<td>${obj.rno}</td>
 		 		<td>${obj.bno}</td>
 		 		<td>${obj.salary}</td>

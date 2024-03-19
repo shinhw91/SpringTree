@@ -1,6 +1,7 @@
 package com.example.demo.emp.web;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,11 +19,12 @@ import com.example.demo.common.Paging;
 import com.example.demo.emp.EmpVO;
 import com.example.demo.emp.SearchVO;
 import com.example.demo.emp.mapper.EmpMapper;
+import com.example.demo.emp.service.EmpService;
 
 @RestController
 public class EmpRestController {
 	
-	@Autowired EmpMapper mapper;
+	@Autowired EmpService service;
 	
 	// 리스트페이지 이동
     @GetMapping("/empMng")
@@ -34,22 +36,31 @@ public class EmpRestController {
 	// 사원리스트 데이터
 	@GetMapping("/ajax/empList")
 //	@ResponseBody	// vo -> json String
-	public List<EmpVO> empList(EmpVO vo, SearchVO svo, Paging pvo) {
+	public Map<String, Object> empList(EmpVO vo, SearchVO svo, Paging pvo) {
 		svo.setStart(pvo.getFirst());
 		svo.setEnd(pvo.getLast());
-		return mapper.getEmpList(vo, svo);
+		Map<String, Object> map = service.getEmpList(vo, svo);
+		pvo.setTotalRecord((Long) map.get("count"));
+		map.put("paging", pvo);
+		
+		return map;
 	}
 	
 	@PostMapping("/ajax/emp")
 	public EmpVO save(@RequestBody EmpVO vo) {
 		System.out.println(vo);
-		mapper.insertEmp(vo);
+		service.insertEmp(vo);
 		return vo;
 	}
 	
 	@GetMapping("/ajax/emp/{empId}")
 	public EmpVO info(@PathVariable int empId) {
-		return mapper.getEmpInfo(empId);
+		return service.getEmpInfo(empId);
+	}
+	
+	@GetMapping("/ajax/empStat")
+	public List<Map<String, Object>> stat() {
+		return service.getState();
 	}
 	
 }

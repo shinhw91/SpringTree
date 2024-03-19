@@ -29,6 +29,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		
+		<!-- 시큐리티 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
+			<!-- Temporary explicit version to fix Thymeleaf bug -->
+			<version>3.1.1.RELEASE</version>
+		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
@@ -82,7 +97,8 @@
 		 <artifactId>thymeleaf-layout-dialect</artifactId>
 		 </dependency>
 		
-		
+
+	
 	</dependencies>
 	
 

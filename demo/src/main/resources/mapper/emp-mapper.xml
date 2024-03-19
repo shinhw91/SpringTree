@@ -49,7 +49,7 @@
 			, DEPARTMENT_ID
 	 FROM employees e
 	 <include refid="condition"></include>
-	 ORDER BY first_name
+	 ORDER BY employee_id DESC
 	 
 	 ) a where rownum <![CDATA[<=]]>#{svo.end}) b where rn >= #{svo.start}
 	 </select>
