@@ -24,17 +24,17 @@ public class BoardMapperTest {
 		}
 	}
 	
-//	@Test
+	@Test
 	public void 게시판단건조회() {
 		String boardNo = "1";
 		BoardVO vo = mapper.getBoardInfo(boardNo);
 		System.out.println(vo);
 	}
 	
-//	@Test
+	@Test
 	public void 게시글등록() {
 		BoardVO vo = BoardVO.builder()
-					.boardNo(4)
+					.boardNo(100)
 					.title("제목")
 					.content("본문")
 					.writer("작성자")
@@ -49,9 +49,9 @@ public class BoardMapperTest {
 		System.out.println("등록건수 = : " + result);
 	}
 	
-//	@Test
+	@Test
 	public void 게시글삭제() {
-		int boardNo = 34;
+		int boardNo = 41;
 		int result = mapper.deleteBoard(boardNo);
 		System.out.println(result);
 	}
