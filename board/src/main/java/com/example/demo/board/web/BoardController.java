@@ -18,4 +18,10 @@ public class BoardController {
 		model.addAttribute("boardList", dao.getBoardList(vo, svo));
 		return "boardList";
 	}
+	
+//	@RequestMapping("/Info/{boardNo}")
+//	public String info(int boardNo, Model model) {
+//		model.addAttribute("board", )
+//	}
+	
 }
